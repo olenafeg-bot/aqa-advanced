@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 npm run prettier
-npm run lint
+npm run lint && echo "\n\033[32m✔ УСПІХ: Всі файли пройшли лінтування!\033[0m" || (echo "\n\033[31m✘ ПОМИЛКА: Будь ласка, виправте помилки лінтування перед комітом.\033[0m" && exit 1)
